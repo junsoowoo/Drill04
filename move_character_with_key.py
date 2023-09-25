@@ -61,12 +61,10 @@ dire = 1
 while running:
     clear_canvas()
     background.draw(TUK_WIDTH//2, TUK_HEIGHT//2)
-    prev_x, prev_y, prev_frame = x, y, move_frame
     x += move_x * 5
     y += move_y * 5
     move_frame = (move_frame + 1) % 10
-    if prev_x != x or prev_y != y or prev_frame != move_frame:
-        character.clip_draw(move_frame * 64, dire * 0, 64, 64, x, y)
+    character.clip_draw(move_frame * 64, dire * 0, 64, 64, x, y)
     update_canvas()
     handle_events()
 
